@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.profile-picture{
+    width: 9rem;
+    height: 9rem;
+    background-color: lighten($color: $bg-dark-50, $amount: 5%);
+    box-shadow: 0 0 30px lighten($color: $bg-dark-50, $amount: 5%);
+}
+.profile-bg{
+    background-color: $bg-dark-50;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.custom-profile-bg{
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+.bg-w{
+    width: 7rem;
+}
+.text-gray{
+    color: $text-gray;
+}
+.txt-area{
+    resize: none;
+}
+.trash{
+    font-size: 1.2rem;
+}
