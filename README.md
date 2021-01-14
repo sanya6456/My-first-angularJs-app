@@ -10,3 +10,8 @@
 -  Change your profile background.
 -  Clear your message section with 'trash' icon.
 -  It will count your posts dynamically.
+<b>Used techniques:</b>
+-  AngularJs 1.8
+-  Bootstrap 4
+-  SASS (with SCSS style)
+-  Font Awesome
