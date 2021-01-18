@@ -1,3 +1,10 @@
+* {
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -10802,13 +10809,6 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
-* {
-  -webkit-box-sizing: border-box !important;
-          box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
 .profile-picture {
   width: 9rem;
   height: 9rem;
@@ -10845,5 +10845,75 @@ a.text-dark:hover, a.text-dark:focus {
 
 .trash {
   font-size: 1.2rem;
+}
+
+.side-nav {
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.side-nav:hover .hide-string {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #000;
+}
+
+.side-nav:hover .fab {
+  font-size: 1.8rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.hide-string {
+  display: none;
+}
+
+.fas, .fab {
+  font-size: 1.5rem;
+  width: 1.3rem;
+}
+
+.fas {
+  color: #2b2b2b;
+}
+
+.nav-item:hover .hide-string {
+  color: #0275d8;
+}
+
+.active-link {
+  color: #0275d8;
+}
+
+.profile-picture {
+  width: 4rem;
+  height: 4rem;
+  background-color: #2f2f2f;
+  -webkit-box-shadow: 0 0 5px #2f2f2f;
+          box-shadow: 0 0 5px #2f2f2f;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.spec-border {
+  border-bottom: 1px solid #e0e5e9;
+}
+
+.spec-border:last-child {
+  border: none;
+}
+
+.rounded-spec {
+  border-radius: 2rem;
+}
+
+.scroll {
+  overflow: auto;
 }
 /*# sourceMappingURL=main.css.map */

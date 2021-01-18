@@ -1,0 +1,61 @@
+// NAV
+.side-nav{
+    height:100vh;
+    top: 0;    
+    left: 0;
+    z-index: 100;
+    cursor: pointer;
+    &:hover{
+        .hide-string{
+            display: flex;
+            color: #000;
+        }
+        .fab{
+            font-size: 1.8rem;
+            transition: .3s;
+        }
+    }
+  }
+  .hide-string{
+    display: none;
+  }
+  .fas, .fab{
+    font-size: 1.5rem;
+    width: 1.3rem;
+  }
+  .fas{
+    color: rgb(43, 43, 43);
+  }
+  .nav-item{
+      &:hover{
+          .hide-string{
+            color: #0275d8;
+          }
+      }
+  }
+  .active-link{
+      color: #0275d8;
+  }
+
+  // MESSAGES
+  .profile-picture{
+    width: 4rem;
+    height: 4rem;
+    background-color: lighten($color: $bg-dark-50, $amount: 5%);
+    box-shadow: 0 0 5px lighten($color: $bg-dark-50, $amount: 5%);
+}
+.pointer{
+    cursor: pointer;
+}
+.spec-border{
+    border-bottom: 1px solid darken($color: $bg-light, $amount: 8%);
+    &:last-child{
+        border: none;
+    }
+}
+.rounded-spec{
+    border-radius: 2rem;
+}
+.scroll{
+    overflow: auto;
+}

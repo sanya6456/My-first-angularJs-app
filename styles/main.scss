@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 // CSS files
 @import '../node_modules/bootstrap/scss/bootstrap';
 // Utilities
@@ -5,3 +10,4 @@
 @import './utilities/variables';
 // Layout
 @import './layout/profile';
+@import './layout/messages';

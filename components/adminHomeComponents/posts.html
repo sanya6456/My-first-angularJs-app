@@ -1,0 +1,48 @@
+<div ng-controller="profileCtrl">
+    <div class="row border-bottom text-center">
+        <div class="col-4 p-3 m-auto">Tweets: {{profile.tweets}}</div>
+        <div class="col-4 p-3 border-left border-right m-auto">Following: {{profile.following}}</div>
+        <div class="col-4 p-3 m-auto">Followers: {{profile.followers}}</div>
+    </div>
+    <!-- POSTS HAVE WRITTEN HERE -->
+    <div class="row border-bottom py-3 px-2">
+        <div class="col-3 col-sm-2 col-xl-1">
+            <div class="rounded-circle mx-auto mb-2">
+                <img ng-src="{{profile.profilePicture}}" alt="profile picture" class="w-100 h-100 rounded-circle">
+            </div>
+        </div>
+        <div class="col-9 col-sm-10 col-xl-11">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p class="font-weight-bold mb-0">{{profile.firstName}} {{profile.lastName}}</p><p class="text-gray">@{{profile.userName}}</p>
+                </div>
+                <div>
+                    <i class="fas fa-trash-alt trash" role="button" ng-click="clearPost()"></i>
+                </div>
+            </div>
+            <textarea class="form-control w-100 rounded border px-2 txt-area mt-2" type="text" placeholder="How you feel? Post it ..." name="post" rows="5" ng-model="currentPost"></textarea>
+            <button class="btn btn-primary d-block px-4 py-1 mt-2 ml-auto" type="button" role="button" ng-click="post()">Post</button>
+        </div>
+    </div>
+    <!-- POSTS DISPLAYS HERE -->
+    <div class="row border-bottom py-3 px-2" ng-repeat="post in posts">
+        <div class="col-3 col-sm-2 col-xl-1">
+            <div class="rounded-circle mx-auto mb-2">
+                <img ng-src="{{profile.profilePicture}}" alt="profile picture" class="w-100 h-100 rounded-circle">
+            </div>
+        </div>
+        <div class="col-9 col-sm-10 col-xl-11">
+            <div class="d-flex flex-column">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p class="font-weight-bold mb-0">{{profile.firstName}} {{profile.lastName}}</p><p class="text-gray">@{{profile.userName}}</p>
+                    </div>
+                    <div>
+                        {{post.publicTime}}
+                    </div>
+                </div>
+                <textarea class="border-0 bg-light txt-area h-100 m-2" type="text" rows="4" readonly>{{post.postDesc}}</textarea>
+            </div>
+        </div>
+    </div>
+</div>

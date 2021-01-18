@@ -1,0 +1,45 @@
+<div ng-controller="messagesCtrl">
+    <div class="row">
+        <!-- CHATS -->
+        <div class="col-12 col-md-5 px-2">
+            <div class="w-100 d-flex justify-content-between">
+                <h5>Messages</h5>
+                <div><i class="fas fa-envelope active-link"></i></div>
+            </div>
+            <!-- RENDER BACKEND -->
+            <div class="overflow-auto vh-100">
+                <div class="row spec-border py-3 pointer" ng-repeat="(index,message) in messages" ng-click="selectMessage(index)">
+                    <div class="d-flex">
+                        <div class="rounded-circle ml-0 mb-2 profile-picture mr-4">
+                            <img ng-src="{{message.profilePicture}}" alt="profile picture" class="w-100 h-100 rounded-circle">
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex">
+                                <div>
+                                    <p class="font-weight-bold mb-0">{{message.name}}</p><p class="text-gray">@{{message.userName}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SEND MESSAGE -->
+        <div class="d-none d-md-flex flex-column justify-content-between col-sm-7 px-4 vh-100">
+            <div class="spec-h overflow-auto">
+                <div class="w-100 text-center pb-2 border-bottom"><h5>{{messages[selectedMessageIndex].name}}</h5></div>
+                <div class="my-3 w-100 d-flex" ng-repeat="text in messages[selectedMessageIndex].msg">
+                    <div class="bg-primary rounded-spec px-4 py-2 text-white w-50 text-break" ng-if="text.author=='me'">{{text.messageContent}} </div>
+                    <div class="ml-auto bg-dark rounded-spec px-4 py-2 text-white w-50 text-break" ng-if="text.author!='me'">{{text.messageContent}}</div>
+                </div>
+            </div>
+            <div class="d-flex bg-white py-2 align-items-center">
+                <i class="fas fa-plus mx-1"></i>
+                <i class="fas fa-file-image mx-1"></i>
+                <i class="fas fa-video ml-1 mr-2"></i>
+                <input type="text" class="form-control w-100 mx-2 py-1 px-2 rounded-pill h-auto" placeholder="Type ..." ng-model="myMessage">
+                <button type="button" class="btn btn-primary px-3 py-1 rounded-pill" ng-click="sendMyMessage()"><i class="fas fa-reply"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
