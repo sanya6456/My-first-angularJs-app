@@ -24,6 +24,10 @@ app.controller("messagesCtrl", function($scope) {
 
     // Get the index of clicked message && insert name of author
     $scope.selectedMessageIndex=0;
+    
+    var selectedMessage=document.getElementById('selectedMessage');
+    var messages=document.getElementById('messages');
+    var fixTitle=document.getElementById('fixTitle');
 
     $scope.selectMessage=(index)=>{
         $scope.selectedMessageIndex=index;
@@ -32,6 +36,21 @@ app.controller("messagesCtrl", function($scope) {
                 e.author=$scope.messages[$scope.selectedMessageIndex].name;
             }
         });
+
+        // responsive messages
+        selectedMessage.classList.remove('d-none');
+        selectedMessage.classList.add('d-flex');
+        messages.classList.add('d-none');
+        messages.classList.add('d-md-block');
+        fixTitle.classList.remove('justify-content-between');
+    }
+
+    // on click left arrow 
+    $scope.backToMsg=()=>{
+        selectedMessage.classList.add('d-none');
+        selectedMessage.classList.remove('d-flex');
+        messages.classList.remove('d-none');
+        messages.classList.remove('d-md-block');
     }
 
     // Watch changes in messages array

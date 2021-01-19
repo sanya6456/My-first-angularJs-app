@@ -1,7 +1,7 @@
 <div ng-controller="messagesCtrl">
     <div class="row">
         <!-- CHATS -->
-        <div class="col-12 col-md-5 px-2">
+        <div class="col-12 col-md-5 px-2" id="messages">
             <div class="w-100 d-flex justify-content-between">
                 <h5>Messages</h5>
                 <div><i class="fas fa-envelope active-link"></i></div>
@@ -25,9 +25,9 @@
             </div>
         </div>
         <!-- SEND MESSAGE -->
-        <div class="d-none d-md-flex flex-column justify-content-between col-sm-7 px-4 vh-100">
-            <div class="spec-h overflow-auto">
-                <div class="w-100 text-center pb-2 border-bottom"><h5>{{messages[selectedMessageIndex].name}}</h5></div>
+        <div class="col-md-7 d-none d-md-flex flex-column justify-content-between px-4 vh-100" id="selectedMessage">
+            <div class="spec-h overflow-auto h-100">
+                <div class="w-100 text-center py-2 border-bottom d-flex justify-content-between" id="fixTitle"><i class="fas fa-long-arrow-alt-left text-primary d-block d-md-none" ng-click="backToMsg()"></i><h5 class="mx-auto">{{messages[selectedMessageIndex].name}}</h5></div>
                 <div class="my-3 w-100 d-flex" ng-repeat="text in messages[selectedMessageIndex].msg">
                     <div class="bg-primary rounded-spec px-4 py-2 text-white w-50 text-break" ng-if="text.author=='me'">{{text.messageContent}} </div>
                     <div class="ml-auto bg-dark rounded-spec px-4 py-2 text-white w-50 text-break" ng-if="text.author!='me'">{{text.messageContent}}</div>

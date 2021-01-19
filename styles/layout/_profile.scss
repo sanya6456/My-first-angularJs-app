@@ -1,6 +1,6 @@
 .profile-picture{
-    width: 9rem;
-    height: 9rem;
+    width: 10rem;
+    height: 10rem;
     background-color: lighten($color: $bg-dark-50, $amount: 5%);
     box-shadow: 0 0 30px lighten($color: $bg-dark-50, $amount: 5%);
 }
@@ -27,4 +27,8 @@
 }
 .trash{
     font-size: 1.2rem;
+}
+.public-prof{
+    width: 7rem;
+    height: 7rem;
 }

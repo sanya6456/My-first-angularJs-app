@@ -31,10 +31,12 @@ app.controller("profileCtrl", function($scope) {
 
     // store posts
     $scope.currentPost=''; // current
-    $scope.posts=[];       // all
+    $scope.posts=[
+        {id:length, name:'Emilia Cagnina', userName:'EmiliaCagninaaaa', profilePicture:'./gallery/friendsProfilePictures/girl-03.jpg', postDesc:`Helloooo, I'm looking for a new TV under 1. If you know one, please tell me ...`, publicTime:`10m 7h`},
+        {id:length, name:'Luigi D’Arezzo', userName:'DareZzO_00', profilePicture:'./gallery/friendsProfilePictures/boy-01.jpg', postDesc:`Yooo guys, I got this app right now! What the HELLL is it..?`, publicTime:`1m 1h`},
+    ];       // all
 
     // public a post
-    var i=0;
     $scope.post=()=>{
         // public time
         var date = new Date();
@@ -43,21 +45,24 @@ app.controller("profileCtrl", function($scope) {
         $scope.publicTime=`${min}m ${hour}h`;
         // public a post if textarea not empty
         if($scope.currentPost!=""){
-            $scope.posts.push({id:i++,postDesc:`${$scope.currentPost}`,publicTime:`${$scope.publicTime}`});
+            $scope.posts.unshift({id:$scope.posts.length, name:`${$scope.profile.firstName} ${$scope.profile.lastName}`, userName:`${$scope.profile.userName}`, profilePicture:`${$scope.profile.profilePicture}`, postDesc:`${$scope.currentPost}`,publicTime:`${$scope.publicTime}`});
         }
         //after post make textarea clear
         $scope.currentPost="";
+
+        // my tweets counter
+        let tweetCounter=0;
+        for(const postObj of $scope.posts){
+            if(postObj.name==$scope.profile.firstName+' '+$scope.profile.lastName){
+                tweetCounter++;
+            }
+        }
+        $scope.profile.tweets=tweetCounter;
     }
 
     // onClick trash icon, your text will be deleted
     $scope.clearPost=()=>{$scope.currentPost="";}
 
-    // tweets counter
-    $scope.$watch('posts.length',(a,b)=>{
-        if(a!=b){
-            $scope.profile.tweets=$scope.posts.length;
-        }
-    })
 
 
 });

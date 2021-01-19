@@ -10810,8 +10810,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .profile-picture {
-  width: 9rem;
-  height: 9rem;
+  width: 10rem;
+  height: 10rem;
   background-color: #2f2f2f;
   -webkit-box-shadow: 0 0 30px #2f2f2f;
           box-shadow: 0 0 30px #2f2f2f;
@@ -10845,6 +10845,11 @@ a.text-dark:hover, a.text-dark:focus {
 
 .trash {
   font-size: 1.2rem;
+}
+
+.public-prof {
+  width: 7rem;
+  height: 7rem;
 }
 
 .side-nav {
