@@ -29,7 +29,7 @@
   .nav-item{
       &:hover{
           .hide-string{
-            color: #0275d8;
+            color: $text-primary;
           }
       }
   }
