@@ -20,20 +20,21 @@ app.controller("messagesCtrl", function($scope) {
         {id:03, name:'Luigi D’Arezzo', userName:'DareZzO_00', profilePicture:'./gallery/friendsProfilePictures/boy-01.jpg', msg:[]},
         {id:04, name:'Mario Diglio', userName:'ItsMario0o0', profilePicture:'./gallery/friendsProfilePictures/boy-02.jpg', msg:[]},
         {id:05, name:'Pietro Fortino', userName:'Fortino_1864', profilePicture:'./gallery/friendsProfilePictures/boy-03.jpg', msg:[]},
-        // EXTRA FRIENDS FOR TEST
+        // DUPLICATED FRIENDS FOR TEST
         {id:02, name:'Emilia Cagnina', userName:'EmiliaCagninaaaa', profilePicture:'./gallery/friendsProfilePictures/girl-03.jpg', msg:[]},
         {id:03, name:'Luigi D’Arezzo', userName:'DareZzO_00', profilePicture:'./gallery/friendsProfilePictures/boy-01.jpg', msg:[]},
         {id:04, name:'Mario Diglio', userName:'ItsMario0o0', profilePicture:'./gallery/friendsProfilePictures/boy-02.jpg', msg:[]},
         {id:05, name:'Pietro Fortino', userName:'Fortino_1864', profilePicture:'./gallery/friendsProfilePictures/boy-03.jpg', msg:[]},
     ]
 
-    // Get the index of clicked message && insert name of author
-    $scope.selectedMessageIndex=0;
+
+    $scope.selectedMessageIndex=0;  // clicked friend index store here
     
     var selectedMessage=document.getElementById('selectedMessage');
     var messages=document.getElementById('messages');
     var fixTitle=document.getElementById('fixTitle');
 
+    // get clicked friend message && insert name of author
     $scope.selectMessage=(index)=>{
         $scope.selectedMessageIndex=index;
         $scope.messages[$scope.selectedMessageIndex].msg.forEach(e => {
@@ -50,7 +51,7 @@ app.controller("messagesCtrl", function($scope) {
         fixTitle.classList.remove('justify-content-between');
     }
 
-    // on click left arrow 
+    // on click left arrow next to 'Message' title
     $scope.backToMsg=()=>{
         selectedMessage.classList.add('d-none');
         selectedMessage.classList.remove('d-flex');
@@ -58,7 +59,7 @@ app.controller("messagesCtrl", function($scope) {
         messages.classList.remove('d-md-block');
     }
 
-    // Watch changes in messages array
+    // Watch changes in messages array (focus: author)
     $scope.$watch('messages', function(){
         $scope.messages[$scope.selectedMessageIndex].msg.forEach(e => {
             if(e.author!=='me'){
@@ -67,8 +68,8 @@ app.controller("messagesCtrl", function($scope) {
         });
     })
 
+    // Send message in private
     $scope.myMessage='';
-
     $scope.sendMyMessage=()=>{
         if($scope.myMessage!=''){
             $scope.messages[$scope.selectedMessageIndex].msg.push({id:$scope.messages[$scope.selectedMessageIndex].msg.length, author:`me`, messageContent:`${$scope.myMessage}`});
@@ -76,7 +77,36 @@ app.controller("messagesCtrl", function($scope) {
         $scope.myMessage='';
     }
 
+    // if click message typing it grow up, else reduce
+    document.addEventListener('click', (e)=>{
+        var options=document.getElementById('options');
+        if(e.target.id!='typeMessage'){
+            options.classList.remove('d-none');
+            options.classList.add('d-flex');
+            options.classList.remove('d-md-flex');
+        }   else{
+            options.classList.add('d-none');
+            options.classList.remove('d-flex');
+            options.classList.add('d-md-flex');
+        }
+    });
+
+    // upload img
+    $scope.uploadImg=()=>{
+        // trigger hidden input field
+        var uploadPictures=document.getElementById('uploadPictures');
+        uploadPictures.click();
+        
+        // handle files
+        uploadPictures.addEventListener("change", function() {
+            files = uploadPictures.files,
+            console.log(files);
+        }, false);
+    }
+
+
 
 
 
 });
+
