@@ -20,6 +20,11 @@ app.controller("messagesCtrl", function($scope) {
         {id:03, name:'Luigi D’Arezzo', userName:'DareZzO_00', profilePicture:'./gallery/friendsProfilePictures/boy-01.jpg', msg:[]},
         {id:04, name:'Mario Diglio', userName:'ItsMario0o0', profilePicture:'./gallery/friendsProfilePictures/boy-02.jpg', msg:[]},
         {id:05, name:'Pietro Fortino', userName:'Fortino_1864', profilePicture:'./gallery/friendsProfilePictures/boy-03.jpg', msg:[]},
+        // EXTRA FRIENDS FOR TEST
+        {id:02, name:'Emilia Cagnina', userName:'EmiliaCagninaaaa', profilePicture:'./gallery/friendsProfilePictures/girl-03.jpg', msg:[]},
+        {id:03, name:'Luigi D’Arezzo', userName:'DareZzO_00', profilePicture:'./gallery/friendsProfilePictures/boy-01.jpg', msg:[]},
+        {id:04, name:'Mario Diglio', userName:'ItsMario0o0', profilePicture:'./gallery/friendsProfilePictures/boy-02.jpg', msg:[]},
+        {id:05, name:'Pietro Fortino', userName:'Fortino_1864', profilePicture:'./gallery/friendsProfilePictures/boy-03.jpg', msg:[]},
     ]
 
     // Get the index of clicked message && insert name of author
@@ -65,8 +70,10 @@ app.controller("messagesCtrl", function($scope) {
     $scope.myMessage='';
 
     $scope.sendMyMessage=()=>{
-        $scope.messages[$scope.selectedMessageIndex].msg.push({id:$scope.messages[$scope.selectedMessageIndex].msg.length, author:`me`, messageContent:`${$scope.myMessage}`});
-        $scope.myMessage="";
+        if($scope.myMessage!=''){
+            $scope.messages[$scope.selectedMessageIndex].msg.push({id:$scope.messages[$scope.selectedMessageIndex].msg.length, author:`me`, messageContent:`${$scope.myMessage}`});
+        }
+        $scope.myMessage='';
     }
 
 

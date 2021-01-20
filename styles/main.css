@@ -10819,7 +10819,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .profile-bg {
   background-color: #222222;
-  background-position: center;
+  background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -10848,8 +10848,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .public-prof {
-  width: 7rem;
-  height: 7rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 .outline-none {

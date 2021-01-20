@@ -6,7 +6,7 @@
 }
 .profile-bg{
     background-color: $bg-dark-50;
-    background-position: center;
+    background-position: bottom center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -29,8 +29,8 @@
     font-size: 1.2rem;
 }
 .public-prof{
-    width: 7rem;
-    height: 7rem;
+    width: 4rem;
+    height: 4rem;
 }
 .outline-none{
     outline: none !important;
