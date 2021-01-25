@@ -20,11 +20,6 @@ app.controller("messagesCtrl", function($scope) {
         {id:03, name:'Luigi D’Arezzo', userName:'DareZzO_00', profilePicture:'./gallery/friendsProfilePictures/boy-01.jpg', msg:[]},
         {id:04, name:'Mario Diglio', userName:'ItsMario0o0', profilePicture:'./gallery/friendsProfilePictures/boy-02.jpg', msg:[]},
         {id:05, name:'Pietro Fortino', userName:'Fortino_1864', profilePicture:'./gallery/friendsProfilePictures/boy-03.jpg', msg:[]},
-        // DUPLICATED FRIENDS FOR TEST
-        {id:02, name:'Emilia Cagnina', userName:'EmiliaCagninaaaa', profilePicture:'./gallery/friendsProfilePictures/girl-03.jpg', msg:[]},
-        {id:03, name:'Luigi D’Arezzo', userName:'DareZzO_00', profilePicture:'./gallery/friendsProfilePictures/boy-01.jpg', msg:[]},
-        {id:04, name:'Mario Diglio', userName:'ItsMario0o0', profilePicture:'./gallery/friendsProfilePictures/boy-02.jpg', msg:[]},
-        {id:05, name:'Pietro Fortino', userName:'Fortino_1864', profilePicture:'./gallery/friendsProfilePictures/boy-03.jpg', msg:[]},
     ]
 
 
