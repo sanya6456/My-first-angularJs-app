@@ -3,7 +3,7 @@
 <b>You can reach it here: https://sleepy-kepler-f8e605.netlify.app/#!/</b>
 
 <b>Issues:</b>
--  Messages view don't have functons yet!
+-  Messages view is under construction!
 
 <b>You can:</b>
 -  Write and publish posts.
