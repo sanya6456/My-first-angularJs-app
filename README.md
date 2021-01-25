@@ -1,6 +1,6 @@
 <b>My-first-angularJs-app</b>
 
-<b>You can reach it here: https://sleepy-kepler-f8e605.netlify.app/#!/</b>
+<b>You can reach it here: https://home-made-twitter-angularjs.netlify.app/#!/</b>
 
 <b>Issues:</b>
 -  Messages view is under construction!
